@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Linq;
 
 namespace HackerNewsApi.Api
 {
@@ -17,7 +18,7 @@ namespace HackerNewsApi.Api
 
         public IEnumerable<TopNews> GetTopNews()
         {
-            IEnumerable<int> ids = GetTopIds();
+            IEnumerable<int> ids = GetTopIds().Take(20);
             List<TopNews> topnews = new List<TopNews>();
             foreach(int i in ids)
             {
