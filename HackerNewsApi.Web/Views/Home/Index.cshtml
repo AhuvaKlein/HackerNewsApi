@@ -1,0 +1,10 @@
+﻿@model IEnumerable<TopNews>
+@using HackerNewsApi.Api
+
+
+<div class="row">
+    @foreach (TopNews t in Model)
+    {
+        <h2><a href=@t.Url> @t.Title </a></h2>
+    }
+</div>
